@@ -3,7 +3,16 @@ window.onload = function() {
 
   // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-sms-swagger.json",
+    urls: [
+          {
+          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-sms-swagger.json",
+          name: "SMS Service"
+        },
+        {
+          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-cust-swagger.json",
+          name: "Customer Service"
+        }
+    ],
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
