@@ -11,6 +11,10 @@ window.onload = function() {
         {
           url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-cust-swagger.json",
           name: "Customer Service"
+        },
+       {
+          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-booking-swagger.json",
+          name: "Booking Service"
         }
     ],
     dom_id: '#swagger-ui',
