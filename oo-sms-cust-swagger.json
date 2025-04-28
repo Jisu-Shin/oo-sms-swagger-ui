@@ -144,7 +144,45 @@
         }
       }
     },
-    "/api/custs/findId/{name}": {
+    "/api/custs/findByIdList": {
+      "post": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "idList로 고객 다건 조회",
+        "operationId": "findByIdList",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/custs/findId": {
       "get": {
         "tags": [
           "CustApiController"
