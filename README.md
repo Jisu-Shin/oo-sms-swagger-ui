@@ -2,7 +2,7 @@
 
 # OO-SMS Swagger UI
 
-📘 이 저장소는 [OO-SMS 프로젝트](https://github.com/Jisu-Shin/oo-sms)에서 사용하는 API 문서를 Swagger UI를 통해 GitHub Pages로 제공하는 용도입니다.
+📘 이 저장소는 [OO-SMS 프로젝트](https://github.com/Jisu-Shin/jisutudy)에서 사용하는 API 문서를 Swagger UI를 통해 GitHub Pages로 제공하는 용도입니다.
 
 👉 **GitHub Pages에서 보기**: [https://jisu-shin.github.io/oo-sms-swagger-ui/](https://jisu-shin.github.io/oo-sms-swagger-ui/)
 
