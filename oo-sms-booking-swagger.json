@@ -123,7 +123,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "requestDto",
             "in": "query",
             "required": true,
             "schema": {
@@ -220,7 +220,7 @@
         "operationId": "searchBooking",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "bookingSearch",
             "in": "query",
             "required": true,
             "schema": {
