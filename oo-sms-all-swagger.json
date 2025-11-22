@@ -1,0 +1,1077 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "SmsApiController",
+      "description": "sms 관련 rest api"
+    },
+    {
+      "name": "ItemApiController",
+      "description": "예약 항목 관련 rest api"
+    },
+    {
+      "name": "CustApiController",
+      "description": "고객 관련 rest api"
+    },
+    {
+      "name": "BookingApiController",
+      "description": "예약 관련 rest api"
+    },
+    {
+      "name": "SmsTemplateApiController",
+      "description": "sms 템플릿 관련 rest api"
+    },
+    {
+      "name": "TemplateVariableApiController",
+      "description": "템플릿 변수 관련 rest api"
+    }
+  ],
+  "paths": {
+    "/api/custs/{id}": {
+      "get": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "고객 단건 조회",
+        "operationId": "findById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustListResponseDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "고객 단건 수정",
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustUpdateRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/templateVariables": {
+      "get": {
+        "tags": [
+          "TemplateVariableApiController"
+        ],
+        "summary": "템플릿 변수 전체조회",
+        "operationId": "findAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TemplateVariableDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TemplateVariableApiController"
+        ],
+        "summary": "템플릿 변수 생성",
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateVariableDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/templateVariables/edit": {
+      "post": {
+        "tags": [
+          "TemplateVariableApiController"
+        ],
+        "summary": "템플릿 변수 수정",
+        "operationId": "update_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateVariableDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/smsTemplates": {
+      "get": {
+        "tags": [
+          "SmsTemplateApiController"
+        ],
+        "summary": "sms 템플릿 전체 조회",
+        "operationId": "getSmsTemplates",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SmsTemplateListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SmsTemplateApiController"
+        ],
+        "summary": "sms 템플릿 생성",
+        "operationId": "create_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SmsTemplateRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/smsTemplates/edit": {
+      "post": {
+        "tags": [
+          "SmsTemplateApiController"
+        ],
+        "summary": "sms 템플릿 수정",
+        "operationId": "update_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SmsTemplateRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sms/send": {
+      "post": {
+        "tags": [
+          "SmsApiController"
+        ],
+        "summary": "sms 발송",
+        "operationId": "send",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SmsSendRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/items": {
+      "get": {
+        "tags": [
+          "ItemApiController"
+        ],
+        "summary": "예약 항목 전체 조회",
+        "operationId": "findAll_1",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ItemApiController"
+        ],
+        "summary": "예약 항목 생성",
+        "operationId": "create_2",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemCreateRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/items/{id}": {
+      "get": {
+        "tags": [
+          "ItemApiController"
+        ],
+        "summary": "예약 항목 단건 조회",
+        "operationId": "getItem",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemGetResponseDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ItemApiController"
+        ],
+        "summary": "예약 항목 수정",
+        "operationId": "update_3",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "requestDto",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ItemUpdateRequestDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/custs": {
+      "get": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "고객 전체 조회",
+        "operationId": "findAllCust",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "고객 등록",
+        "operationId": "save",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustSaveRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/custs/findByIdList": {
+      "post": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "idList로 고객 다건 조회",
+        "operationId": "findByIdList",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bookings": {
+      "post": {
+        "tags": [
+          "BookingApiController"
+        ],
+        "summary": "예약 생성",
+        "operationId": "booking",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookingCreateRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bookings/{id}/cancel": {
+      "post": {
+        "tags": [
+          "BookingApiController"
+        ],
+        "summary": "예약 취소",
+        "operationId": "cancelBooking",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sms/sendList": {
+      "get": {
+        "tags": [
+          "SmsApiController"
+        ],
+        "summary": "sms 발송목록 조회",
+        "operationId": "findList",
+        "parameters": [
+          {
+            "name": "smsListSearchDto",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/SmsListSearchDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SmsFindListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/custs/findId": {
+      "get": {
+        "tags": [
+          "CustApiController"
+        ],
+        "summary": "이름으로 고객 찾기",
+        "operationId": "findByName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bookings/search": {
+      "get": {
+        "tags": [
+          "BookingApiController"
+        ],
+        "summary": "예약 조건 검색",
+        "operationId": "searchBooking",
+        "parameters": [
+          {
+            "name": "bookingSearch",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BookingSearch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookingListResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/templateVariables/{id}": {
+      "delete": {
+        "tags": [
+          "TemplateVariableApiController"
+        ],
+        "summary": "템플릿 변수 삭제",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/smsTemplates/{id}": {
+      "delete": {
+        "tags": [
+          "SmsTemplateApiController"
+        ],
+        "summary": "sms 템플릿 삭제",
+        "operationId": "delete_1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CustUpdateRequestDto": {
+        "required": [
+          "name",
+          "phoneNumber",
+          "smsConsentType"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "smsConsentType": {
+            "type": "string"
+          }
+        }
+      },
+      "TemplateVariableDto": {
+        "required": [
+          "displayVarType",
+          "enText",
+          "koText"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "enText": {
+            "type": "string"
+          },
+          "koText": {
+            "type": "string"
+          },
+          "displayVarType": {
+            "type": "string"
+          },
+          "variableType": {
+            "type": "string"
+          }
+        }
+      },
+      "SmsTemplateRequestDto": {
+        "required": [
+          "smsType",
+          "templateContent"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "templateContent": {
+            "type": "string"
+          },
+          "smsType": {
+            "type": "string"
+          }
+        }
+      },
+      "SmsSendRequestDto": {
+        "required": [
+          "sendDt",
+          "templateId"
+        ],
+        "type": "object",
+        "properties": {
+          "custIdList": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "sendDt": {
+            "type": "string"
+          },
+          "templateId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ItemCreateRequestDto": {
+        "required": [
+          "name",
+          "price",
+          "stockQuantity"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "stockQuantity": {
+            "type": "string"
+          }
+        }
+      },
+      "ItemUpdateRequestDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stockQuantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "CustSaveRequestDto": {
+        "required": [
+          "name",
+          "phoneNumber",
+          "smsConsentType"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "smsConsentType": {
+            "type": "string"
+          }
+        }
+      },
+      "CustListResponseDto": {
+        "title": "고객 조회 응답 DTO",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "아이디",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "이름"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "전화번호"
+          },
+          "consentType": {
+            "type": "string",
+            "description": "고객SMS수신동의타입"
+          }
+        }
+      },
+      "BookingCreateRequestDto": {
+        "required": [
+          "count",
+          "custId",
+          "itemId"
+        ],
+        "type": "object",
+        "properties": {
+          "custId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "count": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "SmsTemplateListResponseDto": {
+        "title": "sms템플릿 전체 조회 응답 DTO",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "templateContent": {
+            "type": "string"
+          },
+          "smsType": {
+            "type": "string"
+          }
+        }
+      },
+      "SmsListSearchDto": {
+        "type": "object",
+        "properties": {
+          "custName": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "endDate": {
+            "type": "string"
+          },
+          "smsResult": {
+            "type": "string"
+          }
+        }
+      },
+      "SmsFindListResponseDto": {
+        "type": "object",
+        "properties": {
+          "smsId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "custName": {
+            "type": "string"
+          },
+          "sendPhoneNumber": {
+            "type": "string"
+          },
+          "smsContent": {
+            "type": "string"
+          },
+          "sendDt": {
+            "type": "string"
+          },
+          "smsType": {
+            "type": "string"
+          },
+          "smsResult": {
+            "type": "string"
+          }
+        }
+      },
+      "ItemGetResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "stockQuantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BookingSearch": {
+        "type": "object",
+        "properties": {
+          "bookingStatus": {
+            "type": "string",
+            "enum": [
+              "BOOK",
+              "CANCEL"
+            ]
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "custName": {
+            "type": "string"
+          }
+        }
+      },
+      "BookingListResponseDto": {
+        "type": "object",
+        "properties": {
+          "bookId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "custId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "custName": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bookingStatus": {
+            "type": "string"
+          },
+          "bookDt": {
+            "type": "string"
+          },
+          "bookingFlag": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
