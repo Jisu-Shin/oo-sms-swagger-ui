@@ -5,16 +5,8 @@ window.onload = function() {
   window.ui = SwaggerUIBundle({
     urls: [
           {
-          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-sms-swagger.json",
-          name: "SMS Service"
-        },
-        {
-          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-cust-swagger.json",
-          name: "Customer Service"
-        },
-       {
-          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-booking-swagger.json",
-          name: "Booking Service"
+          url: "https://raw.githubusercontent.com/Jisu-Shin/oo-sms-swagger-ui/refs/heads/master/oo-sms-all-swagger.json",
+          name: "OO-SMS"
         }
     ],
     dom_id: '#swagger-ui',
